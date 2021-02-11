@@ -16,6 +16,7 @@ public class Entity : MonoBehaviour
     [SerializeField] private float health = 1;
     [SerializeField] private int team = 0;
 
+    //DO NOT CHANGE UNLESS MESH IS PROPERLY SET FOR 2x2 GRID AND OFFSET
     [SerializeField] private float placementSize = 0.85f;
     
     /// <summary>
