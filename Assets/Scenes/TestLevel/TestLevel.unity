@@ -6105,12 +6105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hq: {fileID: 0}
-  spawnRadius: 10
-  center: {x: 0, y: 0, z: 0}
-  team: 1
-  waveSize: 15
   spawnPosition: {fileID: 677985373}
-  spawnableEnemies: []
   enemiesRootTransform: {fileID: 1029449128}
   waveSet: {fileID: 11400000, guid: 81b1f2e36d5b42c499425d9dd310e54f, type: 2}
   waveCount: 0
