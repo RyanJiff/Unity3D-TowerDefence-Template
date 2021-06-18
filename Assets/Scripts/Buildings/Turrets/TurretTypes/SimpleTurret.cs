@@ -7,7 +7,10 @@ public class SimpleTurret : Turret
     */
 
     [SerializeField] float reloadTime = 1f;
-    [SerializeField] float damage = 1f;
+    [SerializeField] float kineticDamage = 1f;
+    [SerializeField] float explosiveDamage = 0f;
+    [SerializeField] float explosiveRadius = 0f;
+    [SerializeField] bool explosive = false;
     [SerializeField] GameObject projectilePrefab = null;
     
     private float reloadTimer = 0f;
@@ -48,8 +51,10 @@ public class SimpleTurret : Turret
     {
         Projectile p = GameObject.Instantiate(projectilePrefab, muzzle.position, Quaternion.identity).GetComponent<Projectile>();
         p.transform.LookAt(currentTarget.transform.position,Vector3.up);
-        p.SetDamage(damage);
-        p.SetTarget(currentTarget.transform);
+        p.SetDamage(kineticDamage);
+        p.SetExplosiveDamage(explosiveDamage);
+        p.SetExplosiveRadius(explosiveRadius);
+        p.SetExplosiveProjectile(explosive);
         
         Destroy(p.gameObject, 5f);
         GetComponent<AudioSource>().Play();
