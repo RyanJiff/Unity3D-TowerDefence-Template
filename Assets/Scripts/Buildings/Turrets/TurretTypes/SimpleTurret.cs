@@ -18,6 +18,7 @@ public class SimpleTurret : Turret
 
     [SerializeField] Transform turret = null;
     [SerializeField] Transform muzzle = null;
+    [SerializeField] GameObject effectPrefab = null;
     private void Update()
     {
         if(currentTarget == null)
@@ -57,7 +58,10 @@ public class SimpleTurret : Turret
         p.SetExplosiveProjectile(explosive);
         
         Destroy(p.gameObject, 5f);
-        GetComponent<AudioSource>().Play();
+        if (effectPrefab)
+        {
+            Instantiate(effectPrefab, muzzle.position, Quaternion.identity);
+        }
 
     }
 

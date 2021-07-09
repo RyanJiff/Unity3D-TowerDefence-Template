@@ -6,9 +6,14 @@ ModelImporter:
   - first:
       74: -3100628101864396295
     second: RadarSpin
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 6aa7dde548b3aa64c8b0b177afd668aa, type: 2}
   materials:
-    materialImportMode: 0
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
