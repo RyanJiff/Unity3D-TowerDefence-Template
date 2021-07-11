@@ -58,21 +58,24 @@ public class Projectile : MonoBehaviour
         }
         else if (explosive)
         {
-            Collider[] c;
-            c = Physics.OverlapSphere(transform.position, explosiveRadius);
-            for(int i = 0; i < c.Length; i++)
+            if (other.GetComponent<Enemy>() || other.transform.tag == "Terrain")
             {
-                if (c[i].GetComponent<Enemy>())
+                Collider[] c;
+                c = Physics.OverlapSphere(transform.position, explosiveRadius);
+                for (int i = 0; i < c.Length; i++)
                 {
-                    c[i].GetComponent<Entity>().Damage(explosiveDamage);
+                    if (c[i].GetComponent<Enemy>())
+                    {
+                        c[i].GetComponent<Entity>().Damage(explosiveDamage);
+                    }
                 }
+                if (destroyEffect)
+                {
+                    GameObject obj = Instantiate(destroyEffect, transform.position, Quaternion.identity);
+                    obj.transform.localScale = Vector3.one * explosiveRadius / 2;
+                }
+                Destroy(this.gameObject);
             }
-            if (destroyEffect)
-            {
-                GameObject obj = Instantiate(destroyEffect, transform.position, Quaternion.identity);
-                obj.transform.localScale = Vector3.one * explosiveRadius / 2;
-            }
-            Destroy(this.gameObject);   
         }
     }
 }

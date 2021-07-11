@@ -17,6 +17,7 @@ class UIElements
     public Transform SelectedMenu = null;
     public Transform PauseMenu = null;
     public Transform DefeatMenu = null;
+    public Transform VictoryMenu = null;
 
     [Header("Text elements")]
     public Text WaveText = null;
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
 
 
     //player related declarations
-    enum PlayerMode { normal, build, selected, waveInProgres, defeat, paused, placeHQ}
+    enum PlayerMode { normal, build, selected, waveInProgres, defeat, paused, placeHQ, victory}
     [SerializeField] PlayerMode playerMode;
 
     [SerializeField] int team = 0;
@@ -88,7 +89,7 @@ public class GameManager : MonoBehaviour
         waveInProgress = waveManager.IsWaveInProgress();
 
         //get pause input
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && (playerMode != PlayerMode.victory || playerMode != PlayerMode.defeat))
         {
             Pause();
         }
@@ -104,7 +105,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
         }
 
-        //ceck if we lost
+        //check if we lost
         if (!hq && playerMode != PlayerMode.placeHQ)
         {
             Time.timeScale = 1;
@@ -121,6 +122,11 @@ public class GameManager : MonoBehaviour
             {
                 playerMode = PlayerMode.normal;
             }
+        }
+        //check if we won
+        if(playerMode != PlayerMode.waveInProgres && waveManager.wavesComplete())
+        {
+            playerMode = PlayerMode.victory;
         }
         
 
@@ -266,6 +272,13 @@ public class GameManager : MonoBehaviour
 
         }
 
+        //Victory mode
+        //___________________________________________________________________________________________________________________________________________
+        else if (playerMode == PlayerMode.victory)
+        {
+
+        }
+
         //place HQ mode
         //___________________________________________________________________________________________________________________________________________
         else if (playerMode == PlayerMode.placeHQ)
@@ -384,6 +397,15 @@ public class GameManager : MonoBehaviour
             UiElements.BuildMenu.gameObject.SetActive(false);
             UiElements.SelectedMenu.gameObject.SetActive(false);
             UiElements.DefeatMenu.gameObject.SetActive(true);
+        }
+
+        //Victory mode
+        //___________________________________________________________________________________________________________________________________________
+        else if (playerMode == PlayerMode.victory)
+        {
+            UiElements.BuildMenu.gameObject.SetActive(false);
+            UiElements.SelectedMenu.gameObject.SetActive(false);
+            UiElements.VictoryMenu.gameObject.SetActive(true);
         }
 
         //Place HQ mode

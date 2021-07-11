@@ -174,4 +174,13 @@ public class WaveManager : MonoBehaviour
         return currentWaveNumber;
     } 
 
+    public bool wavesComplete()
+    {
+        if(GetTotalWavesNumber() == GetCurrentWaveNumber())
+        {
+            return true;
+        }
+        return false;
+    }
+
 }
