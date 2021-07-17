@@ -476,10 +476,10 @@ MonoBehaviour:
   _name: PowerStation
   _abrev: PWR
   _description: Power station makes x$ per round.
-  cost: 1
+  cost: 5
   health: 10
   team: 0
-  placementSize: 0.85
+  placementSize: 1.05
 --- !u!114 &3241097811266044369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9d210239e4a224f97aafd9c2b2735c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
+  amount: 2
 --- !u!208 &663070870140897028
 NavMeshObstacle:
   m_ObjectHideFlags: 0

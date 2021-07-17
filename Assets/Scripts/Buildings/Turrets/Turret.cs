@@ -14,7 +14,7 @@ public class Turret : MonoBehaviour
 
     [SerializeField] protected float range = 5.0f;
 
-    [SerializeField] Transform enemiesParent;
+    Transform enemiesParent;
 
     private void Awake()
     {

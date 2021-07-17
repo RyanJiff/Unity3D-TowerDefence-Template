@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: too much
   m_EditorClassIdentifier: 
   waveClumps:
-  - count: 200
+  - count: 100
     enemy: {fileID: 4279754460650924242, guid: b9a8ece17f92ac24b8c9f52bc013c924, type: 3}
-    timeInterval: 0.01
+    timeInterval: 0.3
     activateTime: 1

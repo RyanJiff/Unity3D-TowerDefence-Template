@@ -353,7 +353,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.8, y: 0.8, z: 0.8}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &100982424456601651
 MonoBehaviour:
@@ -385,7 +385,7 @@ MonoBehaviour:
   cost: 0
   health: 10
   team: 0
-  placementSize: 0.85
+  placementSize: 1.05
 --- !u!1 &3932530894514420925
 GameObject:
   m_ObjectHideFlags: 0

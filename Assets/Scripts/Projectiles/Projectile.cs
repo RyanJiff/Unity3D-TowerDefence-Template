@@ -72,7 +72,7 @@ public class Projectile : MonoBehaviour
                 if (destroyEffect)
                 {
                     GameObject obj = Instantiate(destroyEffect, transform.position, Quaternion.identity);
-                    obj.transform.localScale = Vector3.one * explosiveRadius / 2;
+                    obj.transform.localScale = Vector3.one * explosiveRadius / 1.25f;
                 }
                 Destroy(this.gameObject);
             }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6866080810163909180}
   - component: {fileID: 2692110511211443898}
   m_Layer: 0
-  m_Name: PathFinder
+  m_Name: PathChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,4 +52,4 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0

@@ -157,11 +157,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Wall
   _abrev: WLL
+  _description: This is an entities description.
   cost: 1
   health: 20
   team: 0
-  placementSize: 0.95
-  buildable: 1
+  placementSize: 0.85
 --- !u!208 &1796744827410983793
 NavMeshObstacle:
   m_ObjectHideFlags: 0

@@ -548,7 +548,7 @@ Transform:
   m_GameObject: {fileID: 6029232183926945176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.028}
-  m_LocalScale: {x: 1, y: 1, z: 0.75}
+  m_LocalScale: {x: 1, y: 1, z: 0.8}
   m_Children:
   - {fileID: 1008013582958564132}
   - {fileID: 240941351441224440}
@@ -793,17 +793,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTarget: {fileID: 0}
-  range: 2
-  enemiesParent: {fileID: 0}
-  reloadTime: 0.5
-  kineticDamage: 1
+  range: 4
+  reloadTime: 2
+  kineticDamage: 0
   explosiveDamage: 1
-  explosiveRadius: 1.5
+  explosiveRadius: 2
   explosive: 1
   projectilePrefab: {fileID: 2592918825539408620, guid: 434fbad677ba3d2429d6d22a04ef98c2,
     type: 3}
   turret: {fileID: 3798233502928746464}
-  muzzle: {fileID: 2204668672858700532}
+  muzzles:
+  - {fileID: 2204668672858700532}
   effectPrefab: {fileID: 9201538677612126302, guid: ec514fa04dce3fa4ea44bd9d6600be38,
     type: 3}
 --- !u!114 &8436752978319390554
@@ -824,7 +824,7 @@ MonoBehaviour:
   cost: 1
   health: 10
   team: 0
-  placementSize: 0.95
+  placementSize: 1.05
 --- !u!208 &8436752978319390556
 NavMeshObstacle:
   m_ObjectHideFlags: 0

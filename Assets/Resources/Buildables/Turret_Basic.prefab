@@ -365,7 +365,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTarget: {fileID: 0}
   range: 2
-  enemiesParent: {fileID: 0}
   reloadTime: 0.2
   kineticDamage: 0.5
   explosiveDamage: 0
@@ -374,7 +373,9 @@ MonoBehaviour:
   projectilePrefab: {fileID: 2592918825539408620, guid: 434fbad677ba3d2429d6d22a04ef98c2,
     type: 3}
   turret: {fileID: 898419667623523891}
-  muzzle: {fileID: 898419666524403547}
+  muzzles:
+  - {fileID: 898419666524403547}
+  effectPrefab: {fileID: 0}
 --- !u!114 &5608253602537715337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +394,7 @@ MonoBehaviour:
   cost: 1
   health: 10
   team: 0
-  placementSize: 0.95
+  placementSize: 1.05
 --- !u!208 &5608253602537715343
 NavMeshObstacle:
   m_ObjectHideFlags: 0

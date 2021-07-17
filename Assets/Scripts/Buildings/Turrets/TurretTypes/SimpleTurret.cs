@@ -17,8 +17,10 @@ public class SimpleTurret : Turret
 
 
     [SerializeField] Transform turret = null;
-    [SerializeField] Transform muzzle = null;
+    [SerializeField] Transform[] muzzles = null;
     [SerializeField] GameObject effectPrefab = null;
+
+    int currentMuzzle = 0;
     private void Update()
     {
         if(currentTarget == null)
@@ -35,7 +37,8 @@ public class SimpleTurret : Turret
 
             if(reloadTimer <= 0)
             {
-                Shoot(projectilePrefab);
+                Shoot(projectilePrefab, muzzles[currentMuzzle]);
+                currentMuzzle = (currentMuzzle + 1) % (muzzles.Length);
                 reloadTimer = reloadTime;
             }
             else
@@ -48,9 +51,9 @@ public class SimpleTurret : Turret
     /// <summary>
     /// shoot projectile at target, also make sure to rotate it towards target
     /// </summary>
-    void Shoot(GameObject projectile)
+    void Shoot(GameObject projectile,Transform location)
     {
-        Projectile p = GameObject.Instantiate(projectilePrefab, muzzle.position, Quaternion.identity).GetComponent<Projectile>();
+        Projectile p = GameObject.Instantiate(projectilePrefab, location.position, Quaternion.identity).GetComponent<Projectile>();
         p.transform.LookAt(currentTarget.transform.position,Vector3.up);
         p.SetDamage(kineticDamage);
         p.SetExplosiveDamage(explosiveDamage);
@@ -60,7 +63,7 @@ public class SimpleTurret : Turret
         Destroy(p.gameObject, 5f);
         if (effectPrefab)
         {
-            Instantiate(effectPrefab, muzzle.position, Quaternion.identity);
+            Instantiate(effectPrefab, location.position, Quaternion.identity);
         }
 
     }
