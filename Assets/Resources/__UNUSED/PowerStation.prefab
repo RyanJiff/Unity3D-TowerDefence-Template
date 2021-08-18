@@ -479,7 +479,7 @@ MonoBehaviour:
   cost: 5
   health: 10
   team: 0
-  placementSize: 1.05
+  placementSize: 0.85
 --- !u!114 &3241097811266044369
 MonoBehaviour:
   m_ObjectHideFlags: 0

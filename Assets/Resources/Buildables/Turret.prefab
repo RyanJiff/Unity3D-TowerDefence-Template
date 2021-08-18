@@ -56,8 +56,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6972388495253869364}
   m_LocalRotation: {x: -0.71838343, y: -0, z: -0, w: 0.69564736}
-  m_LocalPosition: {x: 0, y: 0.035, z: 0.65}
-  m_LocalScale: {x: 0.1, y: 0.6, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0.032, z: 0.564}
+  m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 8112353627745457917}
   m_RootOrder: 0
@@ -189,13 +189,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTarget: {fileID: 0}
   range: 2
-  enemiesParent: {fileID: 0}
   reloadTime: 0.5
-  damage: 5
+  kineticDamage: 1
+  explosiveDamage: 0
+  explosiveRadius: 0
+  explosive: 0
   projectilePrefab: {fileID: 2592918825539408620, guid: 434fbad677ba3d2429d6d22a04ef98c2,
     type: 3}
   turret: {fileID: 8112353627745457917}
-  muzzle: {fileID: 6104951003739746094}
+  muzzles:
+  - {fileID: 6104951003739746094}
+  effectPrefab: {fileID: 0}
 --- !u!114 &8112353627548980613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Basic
   _abrev: TST
+  _description: This is an entities description.
   cost: 1
   health: 10
   team: 0
@@ -353,7 +358,7 @@ Transform:
   m_GameObject: {fileID: 8112353627657548409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.3, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.366855, z: 0.1}
+  m_LocalScale: {x: 0.1, y: 0.25, z: 0.1}
   m_Children: []
   m_Father: {fileID: 8112353628812616683}
   m_RootOrder: 1
@@ -431,7 +436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8112353627745457914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0, y: 0.542, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4014559119559391217}
@@ -512,7 +517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8112353628594144214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 8112353628812616683}
