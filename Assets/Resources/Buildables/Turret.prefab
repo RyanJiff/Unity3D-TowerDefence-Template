@@ -199,7 +199,8 @@ MonoBehaviour:
   turret: {fileID: 8112353627745457917}
   muzzles:
   - {fileID: 6104951003739746094}
-  effectPrefab: {fileID: 0}
+  effectPrefab: {fileID: 9201538677612126302, guid: ec514fa04dce3fa4ea44bd9d6600be38,
+    type: 3}
 --- !u!114 &8112353627548980613
 MonoBehaviour:
   m_ObjectHideFlags: 0
