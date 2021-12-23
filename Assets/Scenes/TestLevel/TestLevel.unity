@@ -477,7 +477,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70546105}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -6176,6 +6176,7 @@ MonoBehaviour:
   zoom_max: 30
   zoom_speed: 0.2
   movement_speed: 10
+  map_size: 50
 --- !u!114 &1922172650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6218,7 +6219,7 @@ MonoBehaviour:
   hq: {fileID: 0}
   spawnPosition: {fileID: 677985373}
   enemiesRootTransform: {fileID: 1029449128}
-  waveSet: {fileID: 11400000, guid: 81b1f2e36d5b42c499425d9dd310e54f, type: 2}
+  waveSet: {fileID: 11400000, guid: 4747e63c1fff05441a749969bf1b8992, type: 2}
   waveCount: 0
   currentWaveNumber: 0
   currentWave: {fileID: 0}

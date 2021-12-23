@@ -15,6 +15,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] float zoom_max = 15;
     [SerializeField] float zoom_speed = 0.5f;
     [SerializeField] float movement_speed = 2f;
+    [SerializeField] float map_size = 50;
 
     private Vector3 currentMousePos;
     private Vector3 mousePosLastFrame;
@@ -68,6 +69,8 @@ public class CameraController : MonoBehaviour
         {
             cameraRig.position += new Vector3(cameraRig.right.normalized.x * movement_speed * Time.deltaTime, 0, cameraRig.right.normalized.z * movement_speed * Time.deltaTime);
         }
+
+        cameraRig.position = new Vector3(Mathf.Clamp(cameraRig.position.x, -map_size / 2, map_size/2), cameraRig.position.y, Mathf.Clamp(cameraRig.position.z, -map_size / 2, map_size/2));
 
     }
 }
