@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4279754460650924242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0756006, y: 7.095854e-18, z: -1.5978444}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 529542852033364140}
@@ -65,6 +65,7 @@ MonoBehaviour:
   _abrev: BOX
   _description: Box solider.
   cost: 1
+  reward: 1
   health: 5
   team: 0
   placementSize: 1
