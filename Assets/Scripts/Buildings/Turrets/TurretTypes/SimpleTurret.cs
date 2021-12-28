@@ -69,4 +69,13 @@ public class SimpleTurret : Turret
     }
 
 
+    /// <summary>
+    /// used by the upgrade handler to change the kinetic damage
+    /// </summary>
+    public void ChangeKineticDamage(float delta)
+    {
+        kineticDamage += delta;
+    }
+
+
 }

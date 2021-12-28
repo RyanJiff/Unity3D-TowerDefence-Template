@@ -13,6 +13,7 @@ public class Entity : MonoBehaviour
     [SerializeField] private string _description = "This is an entities description.";
 
     [SerializeField] private float cost = 0;
+    [SerializeField] private float reward = 1;
     [SerializeField] private float health = 1;
     [SerializeField] private int team = 0;
 
@@ -36,6 +37,7 @@ public class Entity : MonoBehaviour
     /// </summary>
     public virtual void Kill()
     {
+        GameObject.FindObjectOfType<ResourceManager>().AddResources(reward);
         Destroy(this.gameObject);
     }
 
@@ -46,6 +48,14 @@ public class Entity : MonoBehaviour
     {
         rM.AddResources(cost * 0.75f);
         Destroy(this.gameObject);
+    }
+
+    public virtual void Upgrade()
+    {
+        if (GetComponent<UpgradeHandler>())
+        {
+            GetComponent<UpgradeHandler>().Upgrade();
+        }
     }
 
 

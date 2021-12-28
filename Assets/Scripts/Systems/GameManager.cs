@@ -517,13 +517,24 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// demolish selected buildable
+    /// demolish selected entity
     /// </summary>
     public void DemolishSelected()
     {
         if (selectedEntity)
         {
             selectedEntity.GetComponent<Entity>().Demolish(resourceManager);
+        }
+    }
+
+    /// <summary>
+    /// upgrade selected entity
+    /// </summary>
+    public void UpgradeSelected()
+    {
+        if (selectedEntity)
+        {
+            selectedEntity.GetComponent<Entity>().Upgrade();
         }
     }
 

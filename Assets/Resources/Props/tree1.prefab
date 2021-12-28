@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6780371057578310134}
   - component: {fileID: 8919944951654939658}
   - component: {fileID: 6525931794744922375}
+  - component: {fileID: 8347625924649462226}
   m_Layer: 0
   m_Name: Cone
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8347625924649462226
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532264818155236955}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.005, y: 0.004999999, z: 0.0049999994}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4670981780912399175
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +136,7 @@ GameObject:
   - component: {fileID: 1164591125710816295}
   - component: {fileID: 462654066299610707}
   - component: {fileID: 3449857670733261001}
+  - component: {fileID: 1308073896518357625}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -160,7 +175,7 @@ MeshRenderer:
   m_GameObject: {fileID: 9127366418635739158}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -190,3 +205,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1308073896518357625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9127366418635739158}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.005, y: 0.004999999, z: 0.004957471}
+  m_Center: {x: 0, y: 0, z: -0.00002126407}

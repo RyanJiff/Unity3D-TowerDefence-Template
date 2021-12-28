@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4030776264280288325}
   - component: {fileID: 6065910913219539769}
   - component: {fileID: 1289182127197245346}
+  - component: {fileID: 9000004603525518035}
   m_Layer: 0
   m_Name: bush
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &9000004603525518035
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693152629503136938}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.009510579, y: 0.009999997, z: 0.009999998}
+  m_Center: {x: 0, y: 0, z: -9.313226e-10}
 --- !u!1 &4072127014754238772
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +104,7 @@ GameObject:
   - component: {fileID: 2997530016700399942}
   - component: {fileID: 3825884831608951267}
   - component: {fileID: 6193803091387131697}
+  - component: {fileID: 6448476510528199427}
   m_Layer: 0
   m_Name: stump
   m_TagString: Untagged
@@ -128,7 +143,7 @@ MeshRenderer:
   m_GameObject: {fileID: 4072127014754238772}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -158,6 +173,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6448476510528199427
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4072127014754238772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010000001, y: 0.009999999, z: 0.004742367}
+  m_Center: {x: 0, y: 0, z: -0.0026288151}
 --- !u!1 &4641345034675463096
 GameObject:
   m_ObjectHideFlags: 0
