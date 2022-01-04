@@ -61,6 +61,10 @@ public class GameManager : MonoBehaviour
     //normal mode related declarations
     private GameObject selectedEntity = null;
 
+    //selected mode related declarations
+    [SerializeField] private GameObject selectedIndicatorPrefab = null;
+    private GameObject selectedIndicator = null;
+
     //build mode related declarations
     private GameObject selectedBuildable = null;
     private GameObject buildableGhostPrefab = null;
@@ -228,7 +232,19 @@ public class GameManager : MonoBehaviour
             
             if (selectedEntity == null)
             {
+                if (selectedIndicator)
+                {
+                    Destroy(selectedIndicator);
+                }
                 SwitchMode(PlayerMode.normal);
+            }
+
+            else
+            {
+                if (!selectedIndicator)
+                {
+                    selectedIndicator = Instantiate(selectedIndicatorPrefab, selectedEntity.transform.position + Vector3.up * 1f, Quaternion.identity);
+                }
             }
 
             //clear selected on right click

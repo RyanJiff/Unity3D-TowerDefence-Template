@@ -8,10 +8,6 @@ public class UpgradeHandler : MonoBehaviour
      * Base upgradable class
      */
     
-
-
-
-
     /// <summary>
     /// Upgrade tower
     /// </summary>

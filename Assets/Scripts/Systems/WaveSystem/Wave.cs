@@ -17,9 +17,11 @@ public class Wave : ScriptableObject
     [System.Serializable]
     public class WaveClump
     {
-
+        [Tooltip("Number of enemies in this clump.")]
         public int count = 1;
+        [Tooltip("The enemy prefab in this clump.")]
         public GameObject enemy = null;
+        [Tooltip("The time between troop spawns.")]
         public float timeInterval = 1f;
         [Tooltip("The time into the wave before we activate this wave clump.")]
         public float activateTime = 2f;
