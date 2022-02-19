@@ -20,6 +20,7 @@ public class WaveManager : MonoBehaviour
 
     private GameObject pathCheckerPrefab = null;
     private GameObject pathCheckerObject = null;
+    private GameObject pathArrowVisual = null;
     NavMeshPath path = null;
 
     [SerializeField] WaveSet waveSet = null;
@@ -52,6 +53,25 @@ public class WaveManager : MonoBehaviour
 
         if (IsWaveInProgress()  && currentWave)
         {
+            //Draw the Visual Arrow for the paths
+            if (!pathArrowVisual)
+            {
+                pathArrowVisual = new GameObject("Path Visual");
+                LineRenderer lineRederer = pathArrowVisual.AddComponent<LineRenderer>();
+                pathArrowVisual.transform.eulerAngles = new Vector3(90, 0, 0);
+                lineRederer.material = new Material(Shader.Find("Diffuse"));
+                lineRederer.alignment = LineAlignment.TransformZ;
+                lineRederer.material.color = Color.blue;
+                lineRederer.widthMultiplier = 0.1f;
+                Debug.Log(GetPath().ToArray());
+                List<Vector3> pathPoints = GetPath();
+                lineRederer.positionCount = pathPoints.Count;
+
+                for (int j = 0; j < pathPoints.Count; j++)
+                {
+                    lineRederer.SetPosition(j, new Vector3(pathPoints[j].x, 0.05f, pathPoints[j].z));
+                }
+            }
             int i = 0;
             waveTimer += Time.deltaTime;
             foreach (Wave.WaveClump wClump in currentWave.waveClumps)
@@ -71,6 +91,13 @@ public class WaveManager : MonoBehaviour
                     Instantiate(wClump.GetEnemy(), spawnPosition.position, Quaternion.identity);
                     waveJustStarted = false;
                 }
+            }
+        }
+        else
+        {
+            if (pathArrowVisual)
+            {
+                Destroy(pathArrowVisual);
             }
         }
     }
@@ -102,6 +129,23 @@ public class WaveManager : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    /// <summary>
+    /// Returns List of type Vector3 of path that units wil take.
+    /// </summary>
+    List<Vector3> GetPath()
+    {
+        pathCheckerObject.GetComponent<NavMeshAgent>().CalculatePath(hq.transform.position, path);
+        print("New path calculated");
+        if (path.status == NavMeshPathStatus.PathComplete)
+        {
+            return path.corners.ToList<Vector3>();
+        }
+        else
+        {
+            return new List<Vector3>();
         }
     }
 

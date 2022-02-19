@@ -6,6 +6,8 @@
 - Modular wave system
 - Automated pathfinding
 - Primitive upgrade system
+- Line to show path enemies will take
+- WIP: Multiple spawn locations for enemies.
 
 # Table of Contents
 1. [Setup](#Setup)
@@ -30,6 +32,7 @@ Drag the prefab /Assets/Resources/Buildables/Turret_Basic into the scene and the
 ## Adding-Waves
 When a level is loaded a WAVE SET is loaded into the GameManager. A wave set is a collection of singular WAVES. To create a WAVE SET to go /Assets/Scripts/Systems/WaveSystem/WaveSet/ and then right right click then Create->Waves->WaveSet. To add waves to the waveset go to /Assets/Scripts/Systems/WaveSystem/Waves/ and then right click then Create->Waves->Wave. Inside the wave you have a Wave Clumps list. make it 1 or more. Set the enemy to an enemy prefab (see [Adding Enemies](#Adding-Enemies)). After creating all your waves go back to the WaveSet you created and attach all the waves you want to it (make sure to increase the Waves list size from 0). After that go to your newly made level (see [Adding Levels](#Adding-Levels)) and select the GameManger gameobject and in the WaveManager script attached to that object change the WaveSet to the wave set we have created.
 
+![Path Line Visual](screenshot1.png)
 ![WIP](screenshot0.png)
 
 
