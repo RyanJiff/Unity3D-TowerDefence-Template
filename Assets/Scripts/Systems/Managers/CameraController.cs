@@ -15,12 +15,12 @@ public class CameraController : MonoBehaviour
     [SerializeField] float zoom_max = 15;
     [SerializeField] float zoom_speed = 0.5f;
     [SerializeField] float movement_speed = 2f;
+
     [SerializeField] float map_size = 50;
 
     private Vector3 currentMousePos;
     private Vector3 mousePosLastFrame;
     private Vector3 mouseDelta;
-    private Vector3 rigRotation;
 
     private void Start()
     {
@@ -46,6 +46,8 @@ public class CameraController : MonoBehaviour
         {  
             cameraRig.Rotate(new Vector3(0, -mouseDelta.x * rotationSpeed, 0), Space.World);
             cameraRig.Rotate(new Vector3(mouseDelta.y * rotationSpeed, 0, 0), Space.Self);
+            
+            
         }
         mousePosLastFrame = currentMousePos;
 

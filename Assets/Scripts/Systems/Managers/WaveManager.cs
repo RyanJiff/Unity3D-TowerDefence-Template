@@ -61,7 +61,7 @@ public class WaveManager : MonoBehaviour
                 pathArrowVisual.transform.eulerAngles = new Vector3(90, 0, 0);
                 lineRederer.material = new Material(Shader.Find("Diffuse"));
                 lineRederer.alignment = LineAlignment.TransformZ;
-                lineRederer.material.color = Color.blue;
+                lineRederer.material.color = Color.cyan;
                 lineRederer.widthMultiplier = 0.1f;
                 Debug.Log(GetPath().ToArray());
                 List<Vector3> pathPoints = GetPath();

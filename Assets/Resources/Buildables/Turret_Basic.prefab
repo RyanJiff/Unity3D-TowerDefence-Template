@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 898419666524403547}
   m_Layer: 0
-  m_Name: muzzle
+  m_Name: muzzleTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 898419667655046699}
   m_Layer: 0
-  m_Name: p2
+  m_Name: barrel_pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 7395002123011265968}
   - component: {fileID: 2741037975732928749}
   m_Layer: 0
-  m_Name: base
+  m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 4819439519637161813}
   - component: {fileID: 7739964397890046415}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -411,6 +411,7 @@ MonoBehaviour:
   reward: 1
   health: 10
   team: 0
+  level: 1
   placementSize: 0.85
 --- !u!114 &6957861331411928373
 MonoBehaviour:
@@ -424,7 +425,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eebffbd2788f434099e06f8d5fd5e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
+  maxLevel: 3
   upgradeCost: 5
+  upgradeDamageIncrease: 1
 --- !u!208 &5608253602537715343
 NavMeshObstacle:
   m_ObjectHideFlags: 0

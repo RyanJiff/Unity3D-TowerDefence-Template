@@ -12,14 +12,26 @@ public class SimpleTurretUpgradeHandler : UpgradeHandler
     [SerializeField] float upgradeCost = 1;
     [SerializeField] float upgradeDamageIncrease = 1;
 
-    public override void Upgrade()
+
+    /// <summary>
+    /// If we upgraded return the level we upgraded to, otherwise return -1
+    /// </summary>
+    public override int Upgrade()
     {
-        base.Upgrade();
-        Debug.Log("Simple turret upgrade");
-        if(GameObject.FindObjectOfType<ResourceManager>().GetResources() >= upgradeCost)
+
+
+        if(GameObject.FindObjectOfType<ResourceManager>().GetResources() >= upgradeCost && level < maxLevel)
         {
             GameObject.FindObjectOfType<ResourceManager>().AddResources(upgradeCost * -1);
             GetComponent<SimpleTurret>().ChangeKineticDamage(upgradeDamageIncrease);
+            level++;
+            return level;
+        }
+        else
+        {
+            Debug.Log("Can't upgrade, not enough money or max level reached!");
+            
+            return -1;
         }
     }
 }

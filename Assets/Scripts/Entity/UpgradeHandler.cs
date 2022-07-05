@@ -7,12 +7,16 @@ public class UpgradeHandler : MonoBehaviour
     /*
      * Base upgradable class
      */
-    
+
+    [SerializeField] protected int level = 1;
+    [SerializeField] protected int maxLevel = 3;
+
+
     /// <summary>
-    /// Upgrade tower
+    /// If we upgraded return the level we upgraded to, otherwise return -1
     /// </summary>
-    public virtual void Upgrade()
+    public virtual int Upgrade()
     {
-        Debug.Log("Base upgrade");
+        return -1;
     }
 }

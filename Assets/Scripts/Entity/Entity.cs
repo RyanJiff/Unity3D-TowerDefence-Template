@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -8,6 +9,7 @@ public class Entity : MonoBehaviour
      * all spawnable or killable objects must contain an entity component.
      */
 
+
     [SerializeField] private string _name  = "Default"; 
     [SerializeField] private string _abrev = "DFLT";
     [SerializeField] private string _description = "This is an entities description.";
@@ -16,6 +18,7 @@ public class Entity : MonoBehaviour
     [SerializeField] private float reward = 1;
     [SerializeField] private float health = 1;
     [SerializeField] private int team = 0;
+    [SerializeField] private int level = 1;
 
     //DO NOT CHANGE UNLESS MESH IS PROPERLY SET FOR 2x2 GRID AND OFFSET
     [SerializeField] private float placementSize = 0.85f;
@@ -54,7 +57,16 @@ public class Entity : MonoBehaviour
     {
         if (GetComponent<UpgradeHandler>())
         {
-            GetComponent<UpgradeHandler>().Upgrade();
+            int returnedLevel =  GetComponent<UpgradeHandler>().Upgrade();
+
+            if(returnedLevel == -1)
+            {
+                //we could not upgrade dont do anything
+            }
+            else
+            {
+                level = returnedLevel;
+            }
         }
     }
 
