@@ -3,7 +3,7 @@
 public class SimpleTurret : Turret
 {
     /*
-     * Simple turret
+     * Simple turret, single projectile and look at target
     */
 
     [SerializeField] float reloadTime = 1f;
@@ -53,7 +53,7 @@ public class SimpleTurret : Turret
     /// </summary>
     void Shoot(GameObject projectile,Transform location)
     {
-        Projectile p = GameObject.Instantiate(projectilePrefab, location.position, Quaternion.identity).GetComponent<Projectile>();
+        Projectile p = GameObject.Instantiate(projectile, location.position, Quaternion.identity).GetComponent<Projectile>();
         p.transform.LookAt(currentTarget.transform.position,Vector3.up);
         p.SetDamage(kineticDamage);
         p.SetExplosiveDamage(explosiveDamage);
@@ -61,6 +61,7 @@ public class SimpleTurret : Turret
         p.SetExplosiveProjectile(explosive);
         
         Destroy(p.gameObject, 5f);
+        
         if (effectPrefab)
         {
             Instantiate(effectPrefab, location.position, Quaternion.identity);

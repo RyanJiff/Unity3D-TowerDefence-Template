@@ -11,7 +11,7 @@ public class Turret : MonoBehaviour
     */
 
     [SerializeField] protected Entity currentTarget;
-
+    [SerializeField] protected List<Entity> targetsInRadius = new List<Entity>();
     [SerializeField] protected float range = 5.0f;
 
     Transform enemiesParent;
@@ -22,7 +22,7 @@ public class Turret : MonoBehaviour
     }
 
     /// <summary>
-    /// call this to find next enemy using tags if we dont have one already.
+    /// call this to find next enemy using the enemies parent game object if we dont have one already. 
     /// </summary>
     public void FindNextEnemy()
     {
@@ -39,4 +39,26 @@ public class Turret : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// call this to get a list of enemies within radius who are not on our team
+    /// </summary>
+    public List<Enemy> FindTargetsInRadius(float radius)
+    {
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+        List<Enemy> enemies = new List<Enemy>();
+
+        for(int i = 0; i < colliders.Length; i++)
+        {
+            //check if we are on the same team or not
+            if (colliders[i].GetComponent<Enemy>())
+            {
+                enemies.Add(colliders[i].GetComponent<Enemy>());
+            }
+        }
+
+        return enemies;
+    }
+
 }

@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
      */
     [Header("Stats")]
     private float damage = 1;
+
     private float explosiveDamage = 1;
     private float explosiveRadius = 1;
     private bool explosive = false;
