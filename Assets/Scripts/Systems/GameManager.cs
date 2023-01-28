@@ -265,6 +265,10 @@ public class GameManager : MonoBehaviour
                 {
                     if (Input.GetKeyUp(KeyCode.Mouse0))
                     {
+                        if (selectedIndicator)
+                        {
+                            Destroy(selectedIndicator);
+                        }
                         selectedEntity = hoveringOverEntity.gameObject;
                     }
                 }
